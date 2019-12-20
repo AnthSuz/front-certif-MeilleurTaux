@@ -317,7 +317,7 @@ td {
   display: flex;
   justify-content: space-between;
   margin: 40px 0;
-  height: 40px;
+  height: 84px;
 }
 
 .previous {
@@ -336,6 +336,7 @@ td {
   font-weight: 500;
   border-radius: 25px;
   line-height: 40px;
+  max-height: 40px;
   text-decoration: none;
 }
 
