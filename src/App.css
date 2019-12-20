@@ -344,6 +344,7 @@ td {
   height: 10px;
   width: 400px;
   position: relative;
+  top: 32px;
 }
 
 .orangeBar {
