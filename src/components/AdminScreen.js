@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { useParams } from "react-router-dom";
 import axios from "axios";
 import Cookies from "js-cookie";
 
 const AdminScreen = props => {
   const [doss, setDoss] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [nbDoss, setNbDoss] = useState(0);
   const [password, setPassword] = useState(Cookies.get("Password"));
   const [watchPassword, setWatchPassword] = useState(false);
   console.log("password", password);
@@ -17,8 +15,6 @@ const AdminScreen = props => {
         "https://backend-certif-meilleurtaux.herokuapp.com/search"
       );
       setDoss(response.data);
-      console.log("rest", response.data);
-      setNbDoss(response.data.length);
     } catch (error) {
       console.log(error.message);
     }
@@ -112,7 +108,6 @@ const AdminScreen = props => {
                 </div>
               );
             })}
-            <p>Nombre de dossier en cours : {nbDoss}</p>
           </div>
         </div>
       )}
