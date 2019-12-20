@@ -53,7 +53,7 @@ const TypeScreen = props => {
         </div>
       </div>
       <Link to="/Admin">
-        <p style={{ color: "#F5F5F5" }}>Admin Screen</p>
+        <p style={{ color: "black" }}>Admin Screen</p>
       </Link>
     </>
   );
