@@ -7,7 +7,9 @@ const DeleteScreen = props => {
 
   const fetchData = async () => {
     try {
-      const response = await axios.post("http://localhost:4000/delete/" + id);
+      const response = await axios.post(
+        "https://backend-certif-meilleurtaux.herokuapp.com/delete/" + id
+      );
     } catch (error) {
       console.log(error.message);
     }

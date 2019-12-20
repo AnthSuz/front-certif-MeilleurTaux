@@ -15,19 +15,22 @@ const MailScreen = props => {
   const [verif, setVerif] = useState(false);
   const fetchData = async () => {
     try {
-      const response = await axios.post("http://localhost:4000/createprojet", {
-        type: props.type,
-        state: props.etat,
-        use: props.use,
-        situation: props.situation,
-        country: props.country,
-        city: props.city,
-        amountProperty: props.amountProperty,
-        amountWorks: props.amountWorks,
-        notary: props.notary,
-        total: props.total,
-        mail: props.mail
-      });
+      const response = await axios.post(
+        "https://backend-certif-meilleurtaux.herokuapp.com/createprojet",
+        {
+          type: props.type,
+          state: props.etat,
+          use: props.use,
+          situation: props.situation,
+          country: props.country,
+          city: props.city,
+          amountProperty: props.amountProperty,
+          amountWorks: props.amountWorks,
+          notary: props.notary,
+          total: props.total,
+          mail: props.mail
+        }
+      );
       props.setDossier(response.data);
     } catch (error) {}
   };

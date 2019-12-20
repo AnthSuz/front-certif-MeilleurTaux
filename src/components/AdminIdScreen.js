@@ -9,7 +9,9 @@ const AdminIdScreen = props => {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get("http://localhost:4000/search/" + id);
+      const response = await axios.get(
+        "https://backend-certif-meilleurtaux.herokuapp.com/search/" + id
+      );
       setDossById(response.data);
       console.log("HERE", response.data);
     } catch (error) {

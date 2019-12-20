@@ -5,14 +5,16 @@ import Cookies from "js-cookie";
 
 const AdminScreen = props => {
   const [doss, setDoss] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   const [nbDoss, setNbDoss] = useState(0);
   const [password, setPassword] = useState(Cookies.get("Password"));
   const [watchPassword, setWatchPassword] = useState(false);
   console.log("password", password);
   const fetchData = async () => {
     try {
-      const response = await axios.get("http://localhost:4000/search");
+      const response = await axios.get(
+        "https://backend-certif-meilleurtaux.herokuapp.com/search"
+      );
       setDoss(response.data);
       setNbDoss(response.data.length);
     } catch (error) {
@@ -65,7 +67,7 @@ const AdminScreen = props => {
                 <td>Adresse e-mail</td>
                 <td>Type de bien</td>
                 <td>Montant total</td>
-                <td>Test</td>
+                <td>Supprimer le dossier</td>
               </tr>
             </table>
             {doss.map((dossierImmo, index) => {
