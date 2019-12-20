@@ -31,7 +31,7 @@ const AmountsScreen = props => {
 
   console.log("total", total);
 
-  let result = Math.ceil((6 / 8) * 100);
+  let result = Math.ceil((5 / 8) * 100);
   return (
     <div className="body">
       <div className="wrapper">

@@ -61,7 +61,7 @@ const UseScreen = props => {
           state={props.use}
           nameCookie="Use"
           valueCookie={props.use}
-          step={3}
+          step={2}
         />
         <Bottom />
       </div>

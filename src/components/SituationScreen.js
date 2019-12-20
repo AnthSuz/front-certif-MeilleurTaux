@@ -82,7 +82,7 @@ const SituationScreen = props => {
           state={props.situation}
           nameCookie="Situation"
           valueCookie={props.situation}
-          step={4}
+          step={3}
         />
         <Bottom />
       </div>

@@ -35,7 +35,7 @@ const MailScreen = props => {
     } catch (error) {}
   };
 
-  let result = Math.ceil((7 / 8) * 100);
+  let result = Math.ceil((6 / 8) * 100);
   return (
     <div className="body">
       <div className="wrapper">

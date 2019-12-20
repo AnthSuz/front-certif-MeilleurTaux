@@ -47,7 +47,7 @@ const TypeScreen = props => {
             namePage="Type"
             setPages={props.setPages}
             pages={props.pages}
-            step={1}
+            step={0}
           />
           <Bottom />
         </div>

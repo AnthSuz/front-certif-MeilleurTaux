@@ -42,7 +42,7 @@ const StateScreen = props => {
           valueCookie={props.etat}
           setPages={props.setPages}
           namePage="Etat"
-          step={2}
+          step={1}
         />
         <Bottom />
       </div>

@@ -111,7 +111,7 @@ const LocationScreen = props => {
           state={props.city}
           nameCookie="Location"
           valueCookie={zip}
-          step={5}
+          step={4}
         />
         <Bottom />
       </div>
