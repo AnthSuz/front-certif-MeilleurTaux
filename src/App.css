@@ -317,6 +317,7 @@ td {
   display: flex;
   justify-content: space-between;
   margin: 40px 0;
+  height: 40px;
 }
 
 .previous {
