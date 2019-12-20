@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Cookies from "js-cookie";
+
+// ----- IMPORT DES CONTAINERS -----
 import Title from "../container/Title";
 import InputRadio from "../container/InputRadio";
 import Step from "../container/Step";
@@ -8,11 +10,11 @@ import Bottom from "../container/Bottom";
 
 const TypeScreen = props => {
   Cookies.set("CurrentPage", "/TypeScreen", { expires: 7 });
-  const onChangeMaison = event => {
+  const onChangeMaison = () => {
     props.setType("Maison");
   };
 
-  const onChangeAppartement = event => {
+  const onChangeAppartement = () => {
     props.setType("Appartement");
   };
 

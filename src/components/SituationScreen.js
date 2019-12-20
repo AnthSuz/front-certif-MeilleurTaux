@@ -1,5 +1,7 @@
 import React from "react";
 import Cookies from "js-cookie";
+
+// ----- IMPORT DES CONTAINERS -----
 import Title from "../container/Title";
 import InputRadio from "../container/InputRadio";
 import Step from "../container/Step";
@@ -7,19 +9,19 @@ import Bottom from "../container/Bottom";
 
 const SituationScreen = props => {
   Cookies.set("CurrentPage", "/SituationScreen", { expires: 7 });
-  const onChangeLocataire = event => {
+  const onChangeLocataire = () => {
     props.setSituation("Locataire");
   };
 
-  const onChangeProprietaire = event => {
+  const onChangeProprietaire = () => {
     props.setSituation("Propriétaire");
   };
 
-  const onChangeFonction = event => {
+  const onChangeFonction = () => {
     props.setSituation("Bénéficiaire d'un logement de fonction");
   };
 
-  const onChangeFree = event => {
+  const onChangeFree = () => {
     props.setSituation("Hébégé à titre gratuit");
   };
   return (

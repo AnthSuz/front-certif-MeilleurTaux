@@ -8,6 +8,8 @@ import {
   Redirect
 } from "react-router-dom";
 
+// --- IMPORT DES COMPONENTS ---
+
 import Header from "./components/Header";
 import TypeScreen from "./components/TypeScreen.js";
 import EtatScreen from "./components/EtatScreen.js";
@@ -42,20 +44,6 @@ function App() {
   const [dossier, setDossier] = useState("");
   // ---
   const [pages, setPages] = useState(Cookies.get("CurrentPage"));
-  console.log("pages ->", pages);
-
-  console.log("type ->", type);
-  console.log("etat ->", etat);
-  console.log("use ->", use);
-  console.log("situation ->", situation);
-  console.log("country ->", country);
-  console.log("city ->", city);
-  console.log("amountProperty ->", amountProperty);
-  console.log("amountWorks ->", amountWorks);
-  console.log("notary ->", notary);
-  console.log("total ->", total);
-  console.log("mail ->", mail);
-  console.log("numéro de dossier ->", dossier);
 
   return (
     <Router>

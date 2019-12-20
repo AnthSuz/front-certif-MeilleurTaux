@@ -1,15 +1,18 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import Email from "../images/visuel-desktop-email.jpg";
-import Info from "../images/infos.png";
 import Cookies from "js-cookie";
-import Bottom from "../container/Bottom";
 import axios from "axios";
+
+// ----- IMPORT DES CONTAINERS -----
+import Bottom from "../container/Bottom";
+
+// ----- IMPORT DES IMAGES -----
+import Info from "../images/infos.png";
+import Email from "../images/visuel-desktop-email.jpg";
 
 const MailScreen = props => {
   Cookies.set("CurrentPage", "/MailScreen", { expires: 7 });
   const [verif, setVerif] = useState(false);
-  console.log("verif", verif);
   const fetchData = async () => {
     try {
       const response = await axios.post("http://localhost:4000/createprojet", {
@@ -25,11 +28,8 @@ const MailScreen = props => {
         total: props.total,
         mail: props.mail
       });
-      console.log("responseMAIL", response.data);
       props.setDossier(response.data);
-    } catch (error) {
-      console.log(error.message);
-    }
+    } catch (error) {}
   };
 
   let result = Math.ceil((7 / 8) * 100);

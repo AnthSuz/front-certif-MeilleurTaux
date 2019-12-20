@@ -1,5 +1,7 @@
 import React from "react";
 import Cookies from "js-cookie";
+
+// ----- IMPORT DES CONTAINERS -----
 import Title from "../container/Title";
 import InputRadio from "../container/InputRadio";
 import Step from "../container/Step";
@@ -7,65 +9,63 @@ import Bottom from "../container/Bottom";
 
 const UseScreen = props => {
   Cookies.set("CurrentPage", "/UseScreen", { expires: 7 });
-  const onChangePrincipal = event => {
+  const onChangePrincipal = () => {
     props.setUse("Résidence Principale");
   };
 
-  const onChangeSecond = event => {
+  const onChangeSecond = () => {
     props.setUse("Résidence Secondaire");
   };
-  const onChangeLoc = event => {
+  const onChangeLoc = () => {
     props.setUse("Investissement Locatif");
   };
   return (
-    <>
-      <div className="body">
-        <div className="wrapper">
-          <Title title="Usage du bien" />
-          <div className="radioInputScreen">
-            <InputRadio
-              name="Résidence principale"
-              onChange={onChangePrincipal}
-              checked={props.use === "Résidence Principale" ? true : false}
-              css={
-                props.use === "Résidence Principale"
-                  ? "inputRadioSelect"
-                  : "inputRadio"
-              }
-            />
-            <InputRadio
-              name="Résidence secondaire"
-              onChange={onChangeSecond}
-              checked={props.use === "Résidence Secondaire" ? true : false}
-              css={
-                props.use === "Résidence Secondaire"
-                  ? "inputRadioSelect"
-                  : "inputRadio"
-              }
-            />
-            <InputRadio
-              name="Investissement Locatif"
-              onChange={onChangeLoc}
-              checked={props.use === "Investissement Locatif" ? true : false}
-              css={
-                props.use === "Investissement Locatif"
-                  ? "inputRadioSelect"
-                  : "inputRadio"
-              }
-            />
-          </div>
-          <Step
-            previous="/EtatScreen"
-            next="/SituationScreen"
-            state={props.use}
-            nameCookie="Use"
-            valueCookie={props.use}
-            step={3}
+    <div className="body">
+      <div className="wrapper">
+        <Title title="Usage du bien" />
+        <div className="radioInputScreen">
+          <InputRadio
+            name="Résidence principale"
+            onChange={onChangePrincipal}
+            checked={props.use === "Résidence Principale" ? true : false}
+            css={
+              props.use === "Résidence Principale"
+                ? "inputRadioSelect"
+                : "inputRadio"
+            }
           />
-          <Bottom />
+          <InputRadio
+            name="Résidence secondaire"
+            onChange={onChangeSecond}
+            checked={props.use === "Résidence Secondaire" ? true : false}
+            css={
+              props.use === "Résidence Secondaire"
+                ? "inputRadioSelect"
+                : "inputRadio"
+            }
+          />
+          <InputRadio
+            name="Investissement Locatif"
+            onChange={onChangeLoc}
+            checked={props.use === "Investissement Locatif" ? true : false}
+            css={
+              props.use === "Investissement Locatif"
+                ? "inputRadioSelect"
+                : "inputRadio"
+            }
+          />
         </div>
+        <Step
+          previous="/EtatScreen"
+          next="/SituationScreen"
+          state={props.use}
+          nameCookie="Use"
+          valueCookie={props.use}
+          step={3}
+        />
+        <Bottom />
       </div>
-    </>
+    </div>
   );
 };
 

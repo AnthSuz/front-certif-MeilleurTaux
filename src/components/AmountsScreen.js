@@ -1,11 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Info from "../images/infos.png";
 import Cookies from "js-cookie";
+
+// ----- IMPORT DES CONTAINERS -----
 import Bottom from "../container/Bottom";
 
+// ----- IMPORT DES IMAGES -----
+import Info from "../images/infos.png";
+
 const AmountsScreen = props => {
-  // Cookies.set("AmountWorks", 0);
   Cookies.set("CurrentPage", "/AmountsScreen", { expires: 7 });
   let notaryPrice = 0;
 

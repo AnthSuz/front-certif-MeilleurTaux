@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from "react";
 import Cookies from "js-cookie";
 import axios from "axios";
+
+// ----- IMPORT DES CONTAINER -----
 import Step from "../container/Step";
 import Bottom from "../container/Bottom";
 
+// ---- IMPORT DES IMAGES -----
 import Info from "../images/infos.png";
+
 const LocationScreen = props => {
   Cookies.set("CurrentPage", "/LocationScreen", { expires: 7 });
   const [zip, setZip] = useState(Cookies.get("Location"));
@@ -37,9 +41,9 @@ const LocationScreen = props => {
     }
   }
 
-  const test = [];
+  const result = [];
   for (let j = 0; j < arrayCity.length; j++) {
-    test.push(
+    result.push(
       <li
         key={j}
         onClick={() => {
@@ -51,9 +55,6 @@ const LocationScreen = props => {
       </li>
     );
   }
-  // const onChangeCity = event => {
-  //   props.setCity(zip);
-  // };
 
   return (
     <div className="body">
@@ -86,12 +87,9 @@ const LocationScreen = props => {
                   onChange={event => {
                     setZip(event.target.value);
                     props.setCity(event.target.value);
-                    console.log("event", event.target.value);
-                    console.log("zip", zip);
-                    // props.setCity(zip);
                   }}
                 />
-                <ul>{test}</ul>
+                <ul>{result}</ul>
               </div>
             </div>
           </div>
