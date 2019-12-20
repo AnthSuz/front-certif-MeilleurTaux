@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import axios from "axios";
 import Cookies from "js-cookie";
 
@@ -16,6 +17,7 @@ const AdminScreen = props => {
         "https://backend-certif-meilleurtaux.herokuapp.com/search"
       );
       setDoss(response.data);
+      console.log("rest", response.data);
       setNbDoss(response.data.length);
     } catch (error) {
       console.log(error.message);
@@ -24,6 +26,16 @@ const AdminScreen = props => {
   useEffect(() => {
     fetchData();
   }, []);
+
+  const removeData = async id => {
+    try {
+      const responseBis = await axios.post(
+        "https://backend-certif-meilleurtaux.herokuapp.com/delete/" + id
+      );
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
 
   return (
     <>
@@ -73,11 +85,6 @@ const AdminScreen = props => {
             {doss.map((dossierImmo, index) => {
               return (
                 <div className="array">
-                  {/* //{" "}
-                  <p>
-                    // Bonjour {dossierImmo.city} - {dossierImmo.mail} - //{" "}
-                    {dossierImmo.type} - {dossierImmo.total} € //{" "}
-                  </p> */}
                   <Link to={"/search/" + dossierImmo._id}>
                     <table>
                       <tr>
@@ -89,11 +96,18 @@ const AdminScreen = props => {
                     </table>
                   </Link>
                   <table className="deleteDoss">
-                    <Link to={"/delete/" + dossierImmo._id}>
-                      <tr>
-                        <td>❌</td>
-                      </tr>
-                    </Link>
+                    <tr>
+                      <td
+                        onClick={() => {
+                          removeData(dossierImmo._id);
+                          const tempDoss = [...doss];
+                          tempDoss.splice(index, 1);
+                          setDoss(tempDoss);
+                        }}
+                      >
+                        ❌
+                      </td>
+                    </tr>
                   </table>
                 </div>
               );

@@ -21,7 +21,6 @@ import MailScreen from "./components/MailScreen.js";
 import FinishScreen from "./components/FinishScreen.js";
 import AdminScreen from "./components/AdminScreen.js";
 import AdminIdScreen from "./components/AdminIdScreen.js";
-import DeleteScreen from "./components/DeleteScreen.js";
 
 function App() {
   const [type, setType] = useState(Cookies.get("Type"));
@@ -115,9 +114,6 @@ function App() {
         </Route>
         <Route path="/search/:id">
           <AdminIdScreen />
-        </Route>
-        <Route path="/delete/:id">
-          <DeleteScreen />
         </Route>
       </Switch>
     </Router>
